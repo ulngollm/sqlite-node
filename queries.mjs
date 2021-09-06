@@ -16,7 +16,7 @@ export const addList = (name) => {
   });
 };
 
-export const addNote = (text, list, comment = null, tag = null) => {
+export const addNote = ({text, list, comment = null, tag = null}) => {
   const sql =
     "INSERT INTO notes (text, list_id, comment, tag_id) values ((?), (?), (?), (?))";
   db.run(sql, [text, list, comment, tag], (err) => {
